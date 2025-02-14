@@ -23,9 +23,10 @@ jobs:
         run: |
           curl -L https://fly.io/install.sh | sh
           echo "$HOME/.fly/bin" >> $GITHUB_PATH
+          export PATH="$HOME/.fly/bin:$PATH"
 
       - name: Authenticate with Fly.io
-        run: $HOME/.fly/bin/flyctl auth login --access-token ${{ secrets.FLY_API_TOKEN }}
+        run: flyctl auth token ${{ secrets.FLY_API_TOKEN }}
 
       - name: Deploy to Fly.io using Docker Image
-        run: $HOME/.fly/bin/flyctl deploy --image marehone/fastapi-app:latest
+        run: flyctl deploy --image marehone/fastapi-app:latest
