@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+    FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
 jobs:
   deploy:
@@ -24,9 +26,6 @@ jobs:
           curl -L https://fly.io/install.sh | sh
           echo "$HOME/.fly/bin" >> $GITHUB_PATH
           export PATH="$HOME/.fly/bin:$PATH"
-
-      - name: Authenticate with Fly.io
-        run: flyctl auth token ${{ secrets.FLY_API_TOKEN }}
 
       - name: Deploy to Fly.io using Docker Image
         run: flyctl deploy --image marehone/fastapi-app:latest
