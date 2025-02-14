@@ -8,7 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,10 +20,12 @@ jobs:
           docker push marehone/fastapi-app:latest
 
       - name: Install Fly CLI
-        run: curl -L https://fly.io/install.sh | sh
+        run: |
+          curl -L https://fly.io/install.sh | sh
+          echo "$HOME/.fly/bin" >> $GITHUB_PATH
 
       - name: Authenticate with Fly.io
-        run: echo "${{ secrets.FLY_API_TOKEN }}" | flyctl auth token
+        run: $HOME/.fly/bin/flyctl auth login --access-token ${{ secrets.FLY_API_TOKEN }}
 
       - name: Deploy to Fly.io using Docker Image
-        run: flyctl deploy --image marehone/fastapi-app:latest
+        run: $HOME/.fly/bin/flyctl deploy --image marehone/fastapi-app:latest
