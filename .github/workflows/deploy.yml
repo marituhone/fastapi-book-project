@@ -4,15 +4,24 @@ on:
   push:
     branches:
       - main
+
 env:
-    FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Deploy preview app
+        uses: superfly/fly-pr-review-apps@1.2.0
+        id: deploy
+        with:
+          region: waw
+          org: personal
 
       - name: Set up Docker
         run: |
@@ -21,11 +30,10 @@ jobs:
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           docker push marehone/fastapi-app:latest
 
-      - name: Install Fly CLI
+      - name: Install Fly.io CLI
         run: |
           curl -L https://fly.io/install.sh | sh
-          echo "$HOME/.fly/bin" >> $GITHUB_PATH
-          export PATH="$HOME/.fly/bin:$PATH"
+          echo "$FLY_API_TOKEN" | flyctl auth login --stdin
 
       - name: Deploy to Fly.io using Docker Image
         run: flyctl deploy --image marehone/fastapi-app:latest
