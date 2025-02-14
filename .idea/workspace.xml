@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="fly.io set up changed">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="deployment pipline change final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +97,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739514537828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="deployment pipline change">
+      <option name="closed" value="true" />
+      <created>1739515757534</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739515757534</updated>
+    </task>
+    <task id="LOCAL-00006" summary="deployment pipline change final">
+      <option name="closed" value="true" />
+      <created>1739515907683</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739515907683</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +135,8 @@
     <MESSAGE value="deploy.yml changed" />
     <MESSAGE value="fly.io token changed" />
     <MESSAGE value="fly.io set up changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fly.io set up changed" />
+    <MESSAGE value="deployment pipline change" />
+    <MESSAGE value="deployment pipline change final" />
+    <option name="LAST_COMMIT_MESSAGE" value="deployment pipline change final" />
   </component>
 </project>
