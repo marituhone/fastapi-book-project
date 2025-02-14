@@ -35,12 +35,6 @@ jobs:
       - name: Verify flyctl installation
         run: |
           flyctl version
-      
-
-      - name: Log in to Fly.io
-        run: |
-          echo "$FLY_API_TOKEN" | flyctl auth login --stdin
-
 
       - name: Deploy to Fly.io
         run: |
