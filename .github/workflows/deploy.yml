@@ -34,7 +34,8 @@ jobs:
 
       - name: Verify flyctl installation
         run: |
-          flyctl --version
+          flyctl version
+      
 
       - name: Log in to Fly.io
         run: |
