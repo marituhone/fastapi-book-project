@@ -49,13 +49,10 @@ jobs:
           SERVER_USER: maritu
           APP_DIR: /var/www/fastapi-app
         run: |
-          ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} << 'EOF'
-          sudo mkdir -p ${APP_DIR}
-          sudo chown ${SERVER_USER}:${SERVER_USER} ${APP_DIR}
-          cd ${APP_DIR}
-          docker pull marehone/fastapi-app:latest
-          docker-compose down
-          docker-compose up -d
-          EOF
-      
+          ssh ${SERVER_USER}@${SERVER_IP} "
+            cd ${APP_DIR} && \
+            docker pull marehone/fastapi-app:latest && \
+            docker-compose down && \
+            docker-compose up -d
+          "
 
