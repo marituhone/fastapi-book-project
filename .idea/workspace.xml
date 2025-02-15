@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="update pipeline" />
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="small fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +78,7 @@
       <workItem from="1739476673233" duration="1291000" />
       <workItem from="1739511113259" duration="652000" />
       <workItem from="1739602500606" duration="3254000" />
-      <workItem from="1739641976009" duration="4442000" />
+      <workItem from="1739641976009" duration="5443000" />
     </task>
     <task id="LOCAL-00001" summary="deployment and dockerization">
       <option name="closed" value="true" />
@@ -174,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739649460504</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix:chick dir found in the remote server">
+      <option name="closed" value="true" />
+      <created>1739649890947</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1739649890947</updated>
+    </task>
+    <task id="LOCAL-00014" summary="small fix">
+      <option name="closed" value="true" />
+      <created>1739650050686</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1739650050686</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +221,8 @@
     <MESSAGE value="delete login step in the pipeline" />
     <MESSAGE value="fix:change the deployment pipeline" />
     <MESSAGE value="update pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pipeline" />
+    <MESSAGE value="fix:chick dir found in the remote server" />
+    <MESSAGE value="small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
   </component>
 </project>
