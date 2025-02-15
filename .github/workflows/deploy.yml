@@ -1,4 +1,4 @@
-name: Deploy to Server
+name: Deploy FastAPI App
 
 on:
   push:
@@ -10,52 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Install SSH dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y openssh-client
-
-      - name: Setup SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/known_hosts
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/id_ed25519
-
-      - name: Log in to Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-      - name: Build and push Docker image
-        run: |
-          docker build -t marehone/fastapi-app:latest .
-          docker push marehone/fastapi-app:latest
-
-      - name: Deploy to Server
-        env:
-          SERVER_IP: 44.246.74.100
-          SERVER_USER: maritu
-          APP_DIR: /var/www/fastapi-app
-          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+      - name: SSH into server and deploy using Docker Compose
         run: |
           ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "
-            echo $USER_PASSWORD | sudo -S docker pull marehone/fastapi-app:latest && \
-            echo $USER_PASSWORD | sudo -S docker-compose down && \
-            echo $USER_PASSWORD | sudo -S docker-compose up -d
+            cd ~/fastapi-project && \
+            sudo docker-compose pull && \
+            sudo docker-compose up -d
           "
-      
-     
-      
-
+        env:
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
