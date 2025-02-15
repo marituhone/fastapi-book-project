@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="verification added in the pipeline" />
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="delete login step in the pipeline">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +40,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Documents/personal/hng/fastapi-book-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Documents/personal/my-project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -47,6 +50,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,6 +78,8 @@
       <workItem from="1739447966375" duration="4989000" />
       <workItem from="1739476673233" duration="1291000" />
       <workItem from="1739511113259" duration="652000" />
+      <workItem from="1739602500606" duration="3254000" />
+      <workItem from="1739641976009" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="deployment and dockerization">
       <option name="closed" value="true" />
@@ -127,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739516720624</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="delete login step in the pipeline">
+      <option name="closed" value="true" />
+      <created>1739517008562</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739517008562</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +179,7 @@
     <MESSAGE value="deployment pipline change final" />
     <MESSAGE value="pipeline updated" />
     <MESSAGE value="verification added in the pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="verification added in the pipeline" />
+    <MESSAGE value="delete login step in the pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete login step in the pipeline" />
   </component>
 </project>

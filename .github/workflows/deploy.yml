@@ -1,12 +1,9 @@
-name: Deploy Pipeline
+name: Deploy to Server
 
 on:
   push:
     branches:
       - main
-
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
 jobs:
   deploy:
@@ -15,27 +12,47 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Log in to Docker Hub
+
+      - name: Install SSH dependencies
         run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          sudo apt-get update
+          sudo apt-get install -y openssh-client
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_ed25519
+
+      - name: Log in to Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Build and push Docker image
         run: |
           docker build -t marehone/fastapi-app:latest .
-          docker push marehone/fastapi-app:latest   
+          docker push marehone/fastapi-app:latest
 
-
-      - name: Install Fly.io CLI
+      - name: Deploy to Server
+        env:
+          SERVER_IP: 44.246.74.100
+          SERVER_USER: maritu
+          APP_DIR: /var/www/fastapi-app
         run: |
-          curl -L https://fly.io/install.sh | sh
-          echo "Adding flyctl to PATH"
-          echo "$HOME/.fly/bin" >> $GITHUB_PATH
+          ssh ${SERVER_USER}@${SERVER_IP} "
+            cd ${APP_DIR} && \
+            docker pull marehone/fastapi-app:latest && \
+            docker-compose down && \
+            docker-compose up -d
+          "
 
-
-      - name: Verify flyctl installation
-        run: |
-          flyctl version
-
-      - name: Deploy to Fly.io
-        run: |
-          flyctl deploy
