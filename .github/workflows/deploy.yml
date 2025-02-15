@@ -48,13 +48,14 @@ jobs:
           SERVER_IP: 44.246.74.100
           SERVER_USER: maritu
           APP_DIR: /var/www/fastapi-app
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
         run: |
           ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "
-            cd ${APP_DIR} && \
-            sudo -S docker pull marehone/fastapi-app:latest <<< '' && \
-            sudo -S docker-compose down <<< '' && \
-            sudo -S docker-compose up -d <<< ''
+            echo $USER_PASSWORD | sudo -S docker pull marehone/fastapi-app:latest && \
+            echo $USER_PASSWORD | sudo -S docker-compose down && \
+            echo $USER_PASSWORD | sudo -S docker-compose up -d
           "
+      
      
       
 
