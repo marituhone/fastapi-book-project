@@ -1,25 +1,31 @@
 name: Deploy FastAPI App
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+    deploy:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
 
-      - name: SSH into server and deploy using Docker Compose
-        run: |
-          ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "
-            cd ~/fastapi-project && \
-            sudo docker-compose pull && \
-            sudo docker-compose up -d
-          "
-        env:
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_IP: ${{ secrets.SERVER_IP }}
+            - name: Set up SSH key
+              run: |
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+            - name: SSH into server and deploy using Docker Compose
+              run: |
+                  ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} << 'EOF'
+                    cd ~/fastapi-project && \
+                    sudo docker-compose pull && \
+                    sudo docker-compose up -d
+                  EOF
+              env:
+                  SERVER_USER: ${{ secrets.SERVER_USER }}
+                  SERVER_IP: ${{ secrets.SERVER_IP }}
