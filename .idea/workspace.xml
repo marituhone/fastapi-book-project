@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="fix:change the deployment pipeline">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="update pipeline" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +76,7 @@
       <workItem from="1739476673233" duration="1291000" />
       <workItem from="1739511113259" duration="652000" />
       <workItem from="1739602500606" duration="3254000" />
-      <workItem from="1739641976009" duration="4087000" />
+      <workItem from="1739641976009" duration="4442000" />
     </task>
     <task id="LOCAL-00001" summary="deployment and dockerization">
       <option name="closed" value="true" />
@@ -168,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739644699531</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update pipeline">
+      <option name="closed" value="true" />
+      <created>1739649460504</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1739649460504</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +202,7 @@
     <MESSAGE value="verification added in the pipeline" />
     <MESSAGE value="delete login step in the pipeline" />
     <MESSAGE value="fix:change the deployment pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:change the deployment pipeline" />
+    <MESSAGE value="update pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pipeline" />
   </component>
 </project>
