@@ -36,7 +36,7 @@ jobs:
               env:
                   SERVER_IP: ${{ secrets.SERVER_IP }}
               run: |
-                  ssh maritu@${SERVER_IP} "
+                  ssh -v maritu@${SERVER_IP} "
                     cd /var/www/fastapi-app && \
                     git fetch origin main && \
                     git reset --hard origin/main && \
