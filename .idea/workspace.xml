@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="fix:server username">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-    </list>
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="pipeline change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +77,7 @@
       <workItem from="1739511113259" duration="652000" />
       <workItem from="1739602500606" duration="3254000" />
       <workItem from="1739641976009" duration="10175000" />
-      <workItem from="1739694979134" duration="2665000" />
+      <workItem from="1739694979134" duration="2978000" />
     </task>
     <task id="LOCAL-00001" summary="deployment and dockerization">
       <option name="closed" value="true" />
@@ -273,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739697164128</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="pipeline change">
+      <option name="closed" value="true" />
+      <created>1739697855130</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1739697855130</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +317,7 @@
     <MESSAGE value="fix:add password final2" />
     <MESSAGE value="fix:pipeline change" />
     <MESSAGE value="fix:server username" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:server username" />
+    <MESSAGE value="pipeline change" />
+    <option name="LAST_COMMIT_MESSAGE" value="pipeline change" />
   </component>
 </project>
