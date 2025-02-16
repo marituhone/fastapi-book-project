@@ -34,7 +34,7 @@ jobs:
                   SERVER_USER: ${{ secrets.SERVER_USER }}
                   SERVER_IP: ${{ secrets.SERVER_IP }}
               run: |
-                  ssh root@${SERVER_IP} "
+                  ssh ${SERVER_USER}@${SERVER_IP} "
                     cd /var/www/fastapi-app && \
                     git fetch origin main && \
                     git reset --hard origin/main && \
