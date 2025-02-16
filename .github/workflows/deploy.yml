@@ -31,6 +31,7 @@ jobs:
 
             - name: Deploy to My Server
               env:
+                  SERVER_USER: ${{ secrets.SERVER_USER }}
                   SERVER_IP: ${{ secrets.SERVER_IP }}
               run: |
                   ssh root@${SERVER_IP} "
