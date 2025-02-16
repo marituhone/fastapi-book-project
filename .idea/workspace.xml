@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="fix:add password" />
+    <list default="true" id="c6e681e3-f7ff-488e-a54f-639251dd5119" name="Changes" comment="fix:add password final2">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +79,8 @@
       <workItem from="1739476673233" duration="1291000" />
       <workItem from="1739511113259" duration="652000" />
       <workItem from="1739602500606" duration="3254000" />
-      <workItem from="1739641976009" duration="9491000" />
+      <workItem from="1739641976009" duration="10175000" />
+      <workItem from="1739694979134" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="deployment and dockerization">
       <option name="closed" value="true" />
@@ -238,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739656831294</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix:add password final2">
+      <option name="closed" value="true" />
+      <created>1739657300253</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1739657300253</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +285,7 @@
     <MESSAGE value="fix:install docker using the pipeline final" />
     <MESSAGE value="fix:add sudo for docker" />
     <MESSAGE value="fix:add password" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:add password" />
+    <MESSAGE value="fix:add password final2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix:add password final2" />
   </component>
 </project>
